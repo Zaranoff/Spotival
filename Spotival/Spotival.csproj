@@ -136,5 +136,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\close.png" />
+    <Resource Include="resources\maximize.png" />
+    <Resource Include="resources\minimize.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

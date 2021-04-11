@@ -25,22 +25,45 @@
                     <Setter Property="Background" Value="#303030"></Setter>
                 </Style>
             </Grid.Resources>
-            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="0">
+            <Button x:Name="btnHome" Click="SelectFunction" Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="0">
                 <Image Source="..\resources\home.png" Width="60"></Image>
             </Button>
-            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="1">
+            <Button x:Name="btnDeezer" Click="SelectFunction" Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="1">
                 <Image Source="..\resources\deezer_white.png" Width="60"></Image>
             </Button>
-            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="2">
+            <Button x:Name="btnSpotify" Click="SelectFunction" Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="2">
                 <Image Source="..\resources\spotify_white.png" Width="60"></Image>
             </Button>
-            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="3">
+            <Button x:Name="btnExplorer" Click="SelectFunction" Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="3">
                 <Image Source="..\resources\explorer_white.png" Width="60"></Image>
             </Button>
-            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="4">
+            <Button x:Name="btnSettings" Click="SelectFunction" Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="4">
                 <Image Source="..\resources\settings.png" Width="60"></Image>
             </Button>
         </Grid>
-
+        <Grid HorizontalAlignment="Left" Height="33" Margin="1090,10,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#303030"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Button x:Name="btnClose" Click="CloseWindow" Grid.Column="2" BorderBrush="Transparent">
+                <Image Source="..\resources\close.png"></Image>
+            </Button>
+            <Button x:Name="btnMaximize" Click="MaximizeWindow" Grid.Column="1" BorderBrush="Transparent">
+                <Image Source="..\resources\maximize.png"></Image>
+            </Button>
+            <Button x:Name="btnMinimize" Click="MinimizeWindow" Grid.Column="0" BorderBrush="Transparent">
+                <Image Source="..\resources\minimize.png"></Image>
+            </Button>
+        </Grid>
     </Grid>
 </Window>
