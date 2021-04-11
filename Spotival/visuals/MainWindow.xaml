@@ -6,9 +6,28 @@
         xmlns:local="clr-namespace:Spotival"
         mc:Ignorable="d"
         WindowStyle="None"
-        WindowState="Maximized"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" Height="800" Width="1200" MinHeight="800" MinWidth="1200">
     <Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="125">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#303030"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Button >
+                <Image Source="..\resources\home.png" Width="70"></Image>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>
