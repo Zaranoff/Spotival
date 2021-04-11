@@ -6,26 +6,39 @@
         xmlns:local="clr-namespace:Spotival"
         mc:Ignorable="d"
         WindowStyle="None"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="800" Width="1200" MinHeight="800" MinWidth="1200">
-    <Grid>
+    <Grid Margin="0,0,0,0" Background="#303030">
         <Grid HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="125">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="125"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="#303030"></Setter>
                 </Style>
             </Grid.Resources>
-            <Button >
-                <Image Source="..\resources\home.png" Width="70"></Image>
+            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="0">
+                <Image Source="..\resources\home.png" Width="60"></Image>
+            </Button>
+            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="1">
+                <Image Source="..\resources\deezer_white.png" Width="60"></Image>
+            </Button>
+            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="2">
+                <Image Source="..\resources\spotify_white.png" Width="60"></Image>
+            </Button>
+            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="3">
+                <Image Source="..\resources\explorer_white.png" Width="60"></Image>
+            </Button>
+            <Button Margin="0,0,4,0" HorizontalAlignment="Right" Width="122" Grid.Row="4">
+                <Image Source="..\resources\settings.png" Width="60"></Image>
             </Button>
         </Grid>
 
