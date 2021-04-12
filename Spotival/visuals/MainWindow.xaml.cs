@@ -24,6 +24,7 @@ namespace Spotival
         public MainWindow()
         {
             InitializeComponent();
+            SelectFunction(btnHome, null);
         }
 
         public void SelectFunction(object sender, RoutedEventArgs e)
