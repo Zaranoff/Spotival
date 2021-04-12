@@ -41,6 +41,7 @@
                 <Image Source="..\resources\settings.png" Width="60"></Image>
             </Button>
         </Grid>
+        <Frame x:Name="mainFrame" Margin="122,0,0,0"></Frame>
         <Grid HorizontalAlignment="Left" Height="33" Margin="1090,10,0,0" VerticalAlignment="Top" Width="100">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
