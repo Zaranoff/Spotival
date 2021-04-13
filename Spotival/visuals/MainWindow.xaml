@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:Spotival"
         mc:Ignorable="d"
         WindowStyle="None"
+        ShowInTaskbar="True"
         ResizeMode="NoResize"
         Title="MainWindow" Height="800" Width="1200" MinHeight="800" MinWidth="1200">
     <Grid Margin="0,0,0,0" Background="#303030">
+        <!--Menu de gauche-->
         <Grid HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="125">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="125"/>
@@ -41,8 +43,28 @@
                 <Image Source="..\resources\settings.png" Width="60"></Image>
             </Button>
         </Grid>
-        <Frame x:Name="mainFrame" Margin="122,0,0,0"></Frame>
+        <Grid Height="101" Margin="120,699,2,0" VerticalAlignment="Top">
+            <!--Grid de lecture-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="195"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,0,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Image Source="../resources/album.jpg" Margin="10,10,88,10"/>
+            <TextBlock Grid.Row="0" Margin="118,30,10,49" Grid.ColumnSpan="2">test</TextBlock>
+            <TextBlock Margin="118,56,10,21" Foreground="gray" Grid.ColumnSpan="2">test</TextBlock>
+            <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
+            <Image Source="../resources/play-button.png" Margin="375,28,404,49" Grid.Column="2"/>
+        </Grid>
+        <Frame x:Name="mainFrame" Margin="120,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal"/>
+        <!--Frame de navigation-->
         <Grid HorizontalAlignment="Left" Height="33" Margin="1090,10,0,0" VerticalAlignment="Top" Width="100">
+            <!--close, mini, maxi-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*"/>

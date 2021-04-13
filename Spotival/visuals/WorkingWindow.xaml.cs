@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Spotival.visuals
 {
     /// <summary>
-    /// Logique d'interaction pour HomeWindow.xaml
+    /// Logique d'interaction pour WorkingWindow.xaml
     /// </summary>
-    public partial class HomeWindow : Page
+    public partial class WorkingWindow : Page
     {
-        public HomeWindow()
+        public WorkingWindow()
         {
             
         }

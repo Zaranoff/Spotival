@@ -8,7 +8,7 @@
          d:DesignHeight="800" d:DesignWidth="1025">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../resources/vinyle.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../resources/vinyle.png"  Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="500"></ColumnDefinition>
@@ -16,8 +16,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="300"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Bienvenu" Margin="10,218,10,10" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
-        <TextBlock Text="sur" Margin="10,371,10,-129" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
-        <TextBlock Text="Spotival" Margin="10,536,10,-306" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="Bienvenue" Margin="64,210,116,18" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="sur" Margin="64,324,116,-82" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="Spotival" Margin="64,440,116,-210" FontFamily="Digitalt" FontSize="55" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
     </Grid>
 </Page>

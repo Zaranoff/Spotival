@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="visuals\WorkingWindow.xaml.cs">
+      <DependentUpon>WorkingWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="visuals\HomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="visuals\WorkingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -153,6 +160,23 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\vinyle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\vinyl_greyscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\Under_construction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\album.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\backward.png" />
+    <Resource Include="resources\end.png" />
+    <Resource Include="resources\pause.png" />
+    <Resource Include="resources\play-button.png" />
+    <Resource Include="resources\speaker.png" />
+    <Resource Include="resources\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

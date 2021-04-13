@@ -40,9 +40,11 @@ namespace Spotival
             {
                 case "btnDeezer":
                     btn.Background = new SolidColorBrush(Color.FromRgb(158, 158, 158));
+                    ChangeWindow(btn);
                     break;
                 case "btnExplorer":
                     btn.Background = new SolidColorBrush(Color.FromRgb(158, 158, 158));
+                    ChangeWindow(btn);
                     break;
                 case "btnHome":
                     btn.Background = new SolidColorBrush(Color.FromRgb(158, 158, 158));
@@ -50,9 +52,11 @@ namespace Spotival
                     break;
                 case "btnSettings":
                     btn.Background = new SolidColorBrush(Color.FromRgb(158, 158, 158));
+                    ChangeWindow(btn);
                     break;
                 case "btnSpotify":
                     btn.Background = new SolidColorBrush(Color.FromRgb(158, 158, 158));
+                    ChangeWindow(btn);
                     break;
             }
         }
@@ -81,7 +85,19 @@ namespace Spotival
 
         public void ChangeWindow(object sender)
         {
-            mainFrame.Navigate(new System.Uri("visuals/HomeWindow.xaml",UriKind.RelativeOrAbsolute));
+            Button btn = sender as Button;
+            switch (btn.Name)
+            {
+                case "btnHome":
+                    mainFrame.Navigate(new System.Uri("visuals/HomeWindow.xaml", UriKind.RelativeOrAbsolute));
+                    break;
+                case "btnDeezer":
+                    mainFrame.Navigate(new System.Uri("visuals/WorkingWindow.xaml", UriKind.RelativeOrAbsolute));
+                    break;
+                case "btnSpotify":
+                    mainFrame.Navigate(new System.Uri("visuals/WorkingWindow.xaml", UriKind.RelativeOrAbsolute));
+                    break;
+            }
         }
     }
 }
