@@ -10,24 +10,22 @@
       Title="ExplorerWindow">
 
     <Grid>
-        <TreeView Background="Transparent" Margin="0,0,680,0">
-            <TreeView Name="treeView" Margin="5" Background="Transparent">
-                <TreeView.ItemContainerStyle>
-                    <Style TargetType="{x:Type TreeViewItem}">
-                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
-                        <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
-                        <Setter Property="Foreground" Value="White"/>
-                    </Style>
-                </TreeView.ItemContainerStyle>
-                <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type classes:FileSystemObjectInfo}" ItemsSource="{Binding Path=Children}">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding Path=ImageSource, UpdateSourceTrigger=PropertyChanged}" Margin="0,1,8,1"></Image>
-                            <TextBlock Text="{Binding Path=FileSystemInfo.Name}"></TextBlock>
-                        </StackPanel>
-                    </HierarchicalDataTemplate>
-                </TreeView.Resources>
-            </TreeView>
+        <TreeView Name="treeView" Margin="0,0,599,0" Background="#303030" RenderTransformOrigin="-0.917,-2.333">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type classes:FileSystemObjectInfo}" ItemsSource="{Binding Path=Children}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Path=ImageSource, UpdateSourceTrigger=PropertyChanged}" Margin="0,1,8,1"></Image>
+                        <TextBlock Text="{Binding Path=FileSystemInfo.Name}"></TextBlock>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
         </TreeView>
     </Grid>
 </Page>
