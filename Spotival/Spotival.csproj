@@ -52,6 +52,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,9 +71,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="class\BaseObject.cs" />
+    <Compile Include="class\DummyFileSystemObjectInfo.cs" />
+    <Compile Include="class\FileAttribute.cs" />
+    <Compile Include="class\FileManager.cs" />
+    <Compile Include="class\FileSystemObjectInfo.cs" />
+    <Compile Include="class\FolderManager.cs" />
+    <Compile Include="class\IconSize.cs" />
+    <Compile Include="class\Interop.cs" />
+    <Compile Include="class\ItemState.cs" />
+    <Compile Include="class\ItemType.cs" />
+    <Compile Include="class\PropertyNotifier.cs" />
+    <Compile Include="class\ShellAttribute.cs" />
+    <Compile Include="class\ShellFileInfo.cs" />
+    <Compile Include="class\ShellManager.cs" />
+    <Compile Include="visuals\ExplorerWindow.xaml.cs">
+      <DependentUpon>ExplorerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="visuals\WorkingWindow.xaml.cs">
       <DependentUpon>WorkingWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="visuals\ExplorerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="visuals\HomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,9 +145,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="class\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="resources\deezer_black.png" />
     <Resource Include="resources\deezer_name_white.png" />
@@ -171,12 +191,11 @@
     <Resource Include="resources\album.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\backward.png" />
-    <Resource Include="resources\end.png" />
+    <Resource Include="resources\next.png" />
     <Resource Include="resources\pause.png" />
-    <Resource Include="resources\play-button.png" />
-    <Resource Include="resources\speaker.png" />
-    <Resource Include="resources\stop.png" />
+    <Resource Include="resources\play.png" />
+    <Resource Include="resources\previous.png" />
+    <Resource Include="resources\volume.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,12 +54,25 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,0,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+            
+            <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,757,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"/>
             <Image Source="../resources/album.jpg" Margin="10,10,88,10"/>
-            <TextBlock Grid.Row="0" Margin="118,30,10,49" Grid.ColumnSpan="2">test</TextBlock>
-            <TextBlock Margin="118,56,10,21" Foreground="gray" Grid.ColumnSpan="2">test</TextBlock>
-            <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
-            <Image Source="../resources/play-button.png" Margin="375,28,404,49" Grid.Column="2"/>
+            <TextBlock Grid.Row="0" Margin="118,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
+            <TextBlock Margin="118,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
+
+            <Border BorderBrush="gray" BorderThickness="1" Margin="66,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
+            <Button Margin="429,28,370,49" Grid.Column="2" Background="Transparent" BorderThickness="0">
+                <Image Source="../resources/play.png"/>
+            </Button>
+            <Button Margin="380,28,420,49" Grid.Column="2" Background="Transparent" BorderThickness="0">
+                <Image Source="../resources/previous.png" />
+            </Button>
+            <Button Margin="478,28,322,49" Grid.Column="2" Background="Transparent" BorderThickness="0">
+                <Image Source="../resources/next.png"/>
+            </Button>
+            <Button Margin="711,28,89,49" Grid.Column="2" Background="Transparent" BorderThickness="0">
+                <Image Source="../resources/volume.png"/>
+            </Button>
         </Grid>
         <Frame x:Name="mainFrame" Margin="120,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal"/>
         <!--Frame de navigation-->

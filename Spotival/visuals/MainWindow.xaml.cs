@@ -97,6 +97,9 @@ namespace Spotival
                 case "btnSpotify":
                     mainFrame.Navigate(new System.Uri("visuals/WorkingWindow.xaml", UriKind.RelativeOrAbsolute));
                     break;
+                case "btnExplorer":
+                    mainFrame.Navigate(new System.Uri("visuals/ExplorerWindow.xaml", UriKind.RelativeOrAbsolute));
+                    break;
             }
         }
     }
