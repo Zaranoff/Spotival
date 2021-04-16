@@ -8,9 +8,31 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1075"
       Title="ExplorerWindow">
-
+    <Page.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <SolidColorBrush Color="#303030" Opacity="0.70"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Opacity" Value="40" />
+        </Style>
+    </Page.Resources>
     <Grid>
-        <TreeView Name="treeView" Margin="0,0,599,0" Background="#303030" RenderTransformOrigin="-0.917,-2.333">
+        <Separator BorderBrush="Gray" Height="100" Margin="456,-27,574,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <TreeView Name="treeView" Margin="0,46,599,0" Background="#303030" FontSize="15" RenderTransformOrigin="-0.917,-2.333">
             <TreeView.ItemContainerStyle>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
@@ -27,5 +49,38 @@
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
         </TreeView>
+        <ListView x:Name="ListViewMusic" Margin="481,46,0,0" Background="#303030">
+            <ListView.View>
+                <GridView x:Name="GridViewMusic">
+                    <GridViewColumn Width="80" DisplayMemberBinding="{Binding Name}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Player" Background="#303030" Foreground="White"></GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="270" DisplayMemberBinding="{Binding Title}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Title" Background="#303030" Foreground="White">Titre</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="180" DisplayMemberBinding="{Binding Artist}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Artist" Background="#303030" Foreground="White">Artiste</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="60" DisplayMemberBinding="{Binding Time}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Time" Background="#303030" Foreground="White">Durée</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Margin="492,6,512,0" Foreground="White" VerticalAlignment="Top">Rechercher :</TextBlock>
+        <TextBox BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
+                 Height="19" Margin="492,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="TextBlockDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
+            Height="19" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnStinationFolder" Margin="402,22,616,0" Click="NavigateFolder" Content="Parcourir" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="19"></Button>
+        <TextBlock Margin="10,6,928,0" Foreground="White" VerticalAlignment="Top" Text="Dossier de destination :"/>
     </Grid>
 </Page>

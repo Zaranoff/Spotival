@@ -48,5 +48,27 @@ namespace Spotival.visuals
         {
             Cursor = Cursors.Wait;
         }
+
+        private void NavigateFolder(object sender, System.EventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog openFileDlg = new System.Windows.Forms.FolderBrowserDialog();
+            var result = openFileDlg.ShowDialog();
+            if (result.ToString() != string.Empty)
+            {
+                TextBlockDestination.Text = openFileDlg.SelectedPath;
+            }
+        }
+
+        public static void LoadMusic(object sender)
+        {
+            
+            String[] fichiers = System.IO.Directory.GetFiles(sender.ToString());
+
+            foreach (string fichier in fichiers)
+            {
+                //GridViewMusic.Items.Add(new Song() { Titre = fichier });
+                ListViewMusic.Items.Add(new Song() { Titre = fichier });
+            }
+        }
     }
 }

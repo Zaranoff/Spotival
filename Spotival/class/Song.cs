@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Spotival.classes
 {
-    public enum ItemType
+    public class Song
     {
-        Drive,
-        File,
-        Folder
+        public string Titre { get; set; }
+        public string Artiste { get; set; }
+        public string Durée { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spotival.visuals;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -186,7 +187,8 @@ namespace Spotival.classes
                             RaiseBeforeExplore();
                             RemoveDummy();
                             ExploreDirectories();
-                            ExploreFiles();
+                            ExplorerWindow.LoadMusic(FileSystemInfo.FullName);
+                            //ExploreFiles(); //Permet d'afficher les fichiers
                             RaiseAfterExplore();
                         }
                     }
