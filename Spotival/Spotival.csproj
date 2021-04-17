@@ -160,7 +160,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="resources\deezer_black.png" />
     <Resource Include="resources\deezer_name_white.png" />
@@ -211,6 +210,12 @@
     <Resource Include="resources\play.png" />
     <Resource Include="resources\previous.png" />
     <Resource Include="resources\volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\player_song.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

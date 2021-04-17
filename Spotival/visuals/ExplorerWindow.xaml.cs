@@ -83,8 +83,15 @@ namespace Spotival.visuals
         private void TreeViewNavigate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             FileSystemObjectInfo item = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
-            string path = item.FileSystemInfo.FullName;
-            LoadMusic(path);
+            if(!(item.FileSystemInfo.FullName is null)){
+                string path = item.FileSystemInfo.FullName;
+                LoadMusic(path);
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(((Button)sender).CommandParameter.ToString());
         }
     }
 }
