@@ -172,7 +172,8 @@ namespace Spotival.classes
             }
         }
 
-        void FileSystemObjectInfo_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        [Obsolete]
+        private void FileSystemObjectInfo_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (FileSystemInfo is DirectoryInfo)
             {
@@ -187,7 +188,8 @@ namespace Spotival.classes
                             RaiseBeforeExplore();
                             RemoveDummy();
                             ExploreDirectories();
-                            ExplorerWindow.LoadMusic(FileSystemInfo.FullName);
+                            ExplorerWindow test = new ExplorerWindow();
+                            test.LoadMusic(FileSystemInfo.FullName);
                             //ExploreFiles(); //Permet d'afficher les fichiers
                             RaiseAfterExplore();
                         }

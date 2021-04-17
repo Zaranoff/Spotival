@@ -59,16 +59,21 @@ namespace Spotival.visuals
             }
         }
 
-        public static void LoadMusic(object sender)
+        [Obsolete]
+        public void LoadMusic(object sender)
         {
-            
             String[] fichiers = System.IO.Directory.GetFiles(sender.ToString());
+            ListView list = new ListView();
 
             foreach (string fichier in fichiers)
             {
-                //GridViewMusic.Items.Add(new Song() { Titre = fichier });
-                ListViewMusic.Items.Add(new Song() { Titre = fichier });
+                if (fichier.EndsWith("mp3"))
+                {
+                    var fi = TagLib.File.Create(fichier);
+                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration });
+                }
             }
+            ListViewMusic.ItemsSource = list.Items;
         }
     }
 }
