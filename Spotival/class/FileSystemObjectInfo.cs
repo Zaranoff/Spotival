@@ -37,8 +37,11 @@ namespace Spotival.classes
             {
                 ImageSource = FileManager.GetImageSource(info.FullName);
             }
-
             PropertyChanged += new PropertyChangedEventHandler(FileSystemObjectInfo_PropertyChanged);
+        }
+
+        public FileSystemObjectInfo()
+        {
         }
 
         public event EventHandler BeforeExpand;
@@ -138,7 +141,7 @@ namespace Spotival.classes
                         fileSystemObject.AfterExplore += FileSystemObject_AfterExplore;
                         Children.Add(fileSystemObject);
                     }
-                }
+                };
             }
         }
 
@@ -188,8 +191,6 @@ namespace Spotival.classes
                             RaiseBeforeExplore();
                             RemoveDummy();
                             ExploreDirectories();
-                            ExplorerWindow test = new ExplorerWindow();
-                            test.LoadMusic(FileSystemInfo.FullName);
                             //ExploreFiles(); //Permet d'afficher les fichiers
                             RaiseAfterExplore();
                         }

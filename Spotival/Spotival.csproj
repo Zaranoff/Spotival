@@ -94,6 +94,7 @@
     <Compile Include="class\ItemState.cs" />
     <Compile Include="class\ItemType.cs" />
     <Compile Include="class\PropertyNotifier.cs" />
+    <Compile Include="class\Repertory.cs" />
     <Compile Include="class\ShellAttribute.cs" />
     <Compile Include="class\ShellFileInfo.cs" />
     <Compile Include="class\ShellManager.cs" />

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Spotival.classes;
+using System.ComponentModel;
 
 namespace Spotival.visuals
 {
@@ -27,7 +28,7 @@ namespace Spotival.visuals
             InitializeComponent();
             InitializeFileSystemObjects();
         }
-        private void InitializeFileSystemObjects()
+        public void InitializeFileSystemObjects()
         {
             var drives = DriveInfo.GetDrives();
             DriveInfo.GetDrives().ToList().ForEach(drive =>
@@ -35,10 +36,9 @@ namespace Spotival.visuals
                 var fileSystemObject = new FileSystemObjectInfo(drive);
                 fileSystemObject.BeforeExplore += FileSystemObject_BeforeExplore;
                 fileSystemObject.AfterExplore += FileSystemObject_AfterExplore;
-                treeView.Items.Add(fileSystemObject);
+                TreeViewNavigate.Items.Add(fileSystemObject);
             });
         }
-
         private void FileSystemObject_AfterExplore(object sender, System.EventArgs e)
         {
             Cursor = Cursors.Arrow;
@@ -60,9 +60,11 @@ namespace Spotival.visuals
         }
 
         [Obsolete]
-        public void LoadMusic(object sender)
+        public void LoadMusic(string sender)
         {
-            String[] fichiers = System.IO.Directory.GetFiles(sender.ToString());
+
+            String[] fichiers = System.IO.Directory.GetFiles(sender.ToString().Replace("//", "/"));
+            //String[] fichiers = System.IO.Directory.GetFiles();
             ListView list = new ListView();
 
             foreach (string fichier in fichiers)
@@ -73,7 +75,16 @@ namespace Spotival.visuals
                     list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration });
                 }
             }
-            ListViewMusic.ItemsSource = list.Items;
+            //this.ListViewMusic.Items.Clear();
+            this.ListViewMusic.ItemsSource = list.Items;
+        }
+
+        [Obsolete]
+        private void TreeViewNavigate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FileSystemObjectInfo item = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
+            string path = item.FileSystemInfo.FullName;
+            LoadMusic(path);
         }
     }
 }
