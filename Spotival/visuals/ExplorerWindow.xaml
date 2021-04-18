@@ -58,7 +58,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <TreeView Name="TreeViewNavigate" MouseDoubleClick="TreeViewNavigate_MouseDoubleClick" Margin="0,46,599,0" Background="#303030" FontSize="15" RenderTransformOrigin="-0.917,-2.333">
+        <TreeView Name="TreeViewNavigate" MouseDoubleClick="TreeViewNavigate_MouseDoubleClick" Margin="0,46,800,0" Background="#303030" FontSize="15" RenderTransformOrigin="-0.917,-2.333">
             <TreeView.ItemContainerStyle>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
@@ -75,7 +75,7 @@
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
         </TreeView>
-        <ListView x:Name="ListViewMusic" Margin="481,46,0,0" Background="#303030" Foreground="White">
+        <ListView x:Name="ListViewMusic" Margin="280,46,0,0" Background="#303030" Foreground="White">
             <ListView.View>
                 <GridView x:Name="GridViewMusic">
                     <GridViewColumn Width="35" >
@@ -98,7 +98,9 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Titre" DisplayMemberBinding="{Binding Titre}" Width="270"/>
                     <GridViewColumn Header="Artiste" DisplayMemberBinding="{Binding Artiste}" Width="180"/>
-                    <GridViewColumn Header="Durée" DisplayMemberBinding="{Binding Durée}" Width="60"/>
+                    <GridViewColumn Header="Durée" DisplayMemberBinding="{Binding Durée}" Width="56"/>
+                    <GridViewColumn Header="BPM" DisplayMemberBinding="{Binding BPM}" Width="40"/>
+                    <GridViewColumn Header="Nom du fichier" DisplayMemberBinding="{Binding NomFichier}"/>
                 </GridView>
             </ListView.View>
         </ListView>

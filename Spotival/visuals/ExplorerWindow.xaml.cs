@@ -72,7 +72,7 @@ namespace Spotival.visuals
                 if (fichier.EndsWith("mp3"))
                 {
                     var fi = TagLib.File.Create(fichier);
-                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration });
+                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, NomFichier = fichier });
                 }
             }
             //this.ListViewMusic.Items.Clear();

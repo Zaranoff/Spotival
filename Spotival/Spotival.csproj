@@ -212,10 +212,10 @@
     <Resource Include="resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\player_song.png" />
+    <Resource Include="resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\plus.png" />
+    <Resource Include="resources\player_song.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,7 @@ namespace Spotival.classes
         public string Titre { get; set; }
         public string Artiste { get; set; }
         public TimeSpan Durée { get; set; }
-        public string Type { get; set; }
+        public uint BPM { get; set; }
+        public string NomFichier { get; set; }
     }
 }
