@@ -100,13 +100,19 @@
                     <GridViewColumn Header="Artiste" DisplayMemberBinding="{Binding Artiste}" Width="180"/>
                     <GridViewColumn Header="Durée" DisplayMemberBinding="{Binding Durée}" Width="56"/>
                     <GridViewColumn Header="BPM" DisplayMemberBinding="{Binding BPM}" Width="40"/>
-                    <GridViewColumn Header="Nom du fichier" DisplayMemberBinding="{Binding NomFichier}"/>
+                    <GridViewColumn Header="Localisation" DisplayMemberBinding="{Binding LocalisationFichier}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock Margin="492,6,512,0" Foreground="White" VerticalAlignment="Top">Rechercher :</TextBlock>
-        <TextBox BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
-                 Height="19" Margin="492,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" RenderTransformOrigin="0.5,0.5"/>
+        <Button Margin="487,22,570,0" Name="bntAddList" Click="bntAddList_Click" Background="#303030" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
+            <Image Source="../resources/plus_icon.png" Height="15" Width="15"/>
+        </Button>
+        <TextBlock Margin="515,6,488,0" Foreground="White" VerticalAlignment="Top">Rechercher :</TextBlock>
+        <TextBox x:Name="txtSearch" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
+                 Height="19" Margin="515,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" RenderTransformOrigin="0.5,0.5"/>
+        <Button Margin="901,22,157,0" Name="btnSearchSong" Click="btnSearchSong_Click" Background="Gray" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
+            <Image Source="../resources/fleche_droite.png" Height="19" Width="15"/>
+        </Button>
         <TextBox x:Name="TextBlockDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
             Height="19" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="btnStinationFolder" Margin="402,22,616,0" Click="NavigateFolder" Content="Parcourir" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="19"></Button>

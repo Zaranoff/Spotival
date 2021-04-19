@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Spotival.classes;
 using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace Spotival.visuals
 {
@@ -64,7 +65,6 @@ namespace Spotival.visuals
         {
 
             String[] fichiers = System.IO.Directory.GetFiles(sender.ToString().Replace("//", "/"));
-            //String[] fichiers = System.IO.Directory.GetFiles();
             ListView list = new ListView();
 
             foreach (string fichier in fichiers)
@@ -72,7 +72,7 @@ namespace Spotival.visuals
                 if (fichier.EndsWith("mp3"))
                 {
                     var fi = TagLib.File.Create(fichier);
-                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, NomFichier = fichier });
+                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = fichier });
                 }
             }
             //this.ListViewMusic.Items.Clear();
@@ -92,6 +92,68 @@ namespace Spotival.visuals
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(((Button)sender).CommandParameter.ToString());
+        }
+
+        private void bntAddList_Click(object sender, RoutedEventArgs e)
+        {
+            if(TextBlockDestination.Text != "" && txtSearch.Text != "")
+            {
+                string path = TextBlockDestination.Text + "/_a_prevoir.txt";
+                if (!File.Exists(path))
+                {
+                    File.Create(path).Close();
+                }
+
+                using (StreamWriter writer = new StreamWriter(path))
+                {
+                    writer.WriteLine(txtSearch.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Merci de choisir un dossier de destination et de saisir un titre");
+            }
+        }
+
+        private void btnSearchSong_Click(object sender, RoutedEventArgs e)
+        {
+
+            FileSystemObjectInfo path = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
+            ListView allFiles = new ListView();
+            allFiles = listAllFiles(allFiles, path.FileSystemInfo.FullName, "mp3", true);
+            ListViewMusic.ItemsSource = allFiles.Items;
+        }
+
+        public ListView listAllFiles(ListView allFiles, string path, string ext, bool scanDirOk)
+        {
+            string[] listFilesCurrDir = Directory.GetFiles(path);
+
+            foreach (string rowFile in listFilesCurrDir)
+            {
+                if (rowFile.ToUpper().Contains(txtSearch.Text.ToUpper()))
+                {
+                    var fi = TagLib.File.Create(rowFile);
+                    allFiles.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = rowFile });
+                }
+            }
+
+            listFilesCurrDir = null;
+
+            if (scanDirOk)
+            {
+                string[] listDirCurrDir = Directory.GetDirectories(path);
+
+                if (listDirCurrDir.Length != 0)
+                {
+                    foreach (string rowDir in listDirCurrDir)
+                    {
+                        listAllFiles(allFiles, rowDir, ext, scanDirOk);
+                    }
+                }
+                listDirCurrDir = null;
+
+            }
+            return allFiles;
         }
     }
 }

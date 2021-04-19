@@ -56,9 +56,9 @@
             </Grid.RowDefinitions>
             
             <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,757,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"/>
-            <Image Source="../resources/album.jpg" Margin="10,10,88,10"/>
-            <TextBlock Grid.Row="0" Margin="118,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
-            <TextBlock Margin="118,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
+            <Image Source="../resources/album.jpg" Margin="10,11,106,9"/>
+            <TextBlock Grid.Row="0" Margin="94,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
+            <TextBlock Margin="94,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
 
             <Border BorderBrush="gray" BorderThickness="1" Margin="66,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
             <Button Margin="429,28,370,49" Grid.Column="2" Background="Transparent" BorderThickness="0">

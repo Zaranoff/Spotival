@@ -217,5 +217,11 @@
   <ItemGroup>
     <Resource Include="resources\player_song.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\plus_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\fleche_droite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
