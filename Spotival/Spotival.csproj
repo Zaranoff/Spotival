@@ -224,6 +224,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\pause_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="resources\play_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
