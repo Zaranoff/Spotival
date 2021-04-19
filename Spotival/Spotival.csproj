@@ -207,7 +207,6 @@
   <ItemGroup>
     <Resource Include="resources\next.png" />
     <Resource Include="resources\pause.png" />
-    <Resource Include="resources\play.png" />
     <Resource Include="resources\previous.png" />
     <Resource Include="resources\volume.png" />
   </ItemGroup>
@@ -222,6 +221,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\fleche_droite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\pause_icon.png" />
+    <Resource Include="resources\play_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

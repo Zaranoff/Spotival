@@ -19,10 +19,23 @@
             <Setter Property="BorderThickness" Value="0, 0, 0, 1" />
             <Setter Property="Padding" Value="5" />
             <Setter Property="Opacity" Value="40" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="true" >
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Background" Value="Gray" />
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Background" Value="Gray" />
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="GridViewColumnHeader">
             <Setter Property="Background" Value="#303030"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="GridViewColumnHeader">
@@ -100,7 +113,7 @@
                     <GridViewColumn Header="Artiste" DisplayMemberBinding="{Binding Artiste}" Width="180"/>
                     <GridViewColumn Header="Durée" DisplayMemberBinding="{Binding Durée}" Width="56"/>
                     <GridViewColumn Header="BPM" DisplayMemberBinding="{Binding BPM}" Width="40"/>
-                    <GridViewColumn Header="Localisation" DisplayMemberBinding="{Binding LocalisationFichier}"/>
+                    <GridViewColumn Header="Localisation" DisplayMemberBinding="{Binding LocalisationFichier}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
