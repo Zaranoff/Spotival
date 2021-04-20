@@ -140,19 +140,19 @@
             </Grid.Resources>
 
             <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,757,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"/>
-            <Image Source="../resources/album.jpg" Margin="10,11,106,9"/>
-            <TextBlock x:Name="txtTitle" FontSize="15" Grid.Row="0" Margin="94,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
-            <TextBlock x:Name="txtArtist" Margin="94,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
+            <Image x:Name="CoverSong" Source="../resources/album.jpg" Margin="10,11,106,9"/>
+            <TextBlock x:Name="txtTitle" FontSize="15" Grid.Row="0" Margin="94,30,762,49" Grid.ColumnSpan="3" Foreground="White"></TextBlock>
+            <TextBlock x:Name="txtArtist" Margin="94,56,762,21" Foreground="gray" Grid.ColumnSpan="3"></TextBlock>
 
             <Border BorderBrush="Gray" BorderThickness="1" Margin="66,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
 
-            <Label Content="00:00" Margin="154,37,628,38" Grid.Column="2" Foreground="White"/>
-            <Slider Style="{StaticResource Horizontal_Slider}" VerticalAlignment="Center" Margin="200,40,83,39" Grid.Column="2" Maximum="100"/>
-
+            <Label x:Name="Time" Content="00:00:00" Margin="141,37,628,38" Grid.Column="2" Foreground="White"/>
+            <Slider x:Name="progressSong" Style="{StaticResource Horizontal_Slider}" VerticalAlignment="Center" Margin="200,40,83,39" Grid.Column="2" Maximum="100"/>
+            
             <Button Margin="92,30,690,29" Grid.Column="2" Background="Transparent" BorderThickness="0">
                 <Image Source="../resources/play_icon.png" Width="38"/>
             </Button>
-            <Label Content="00:00" Margin="745,36,32,40" Grid.Column="2" Foreground="White"/>
+            <Label x:Name="TotalTime" Content="00:00:00" Margin="745,36,24,40" Grid.Column="2" Foreground="White"/>
         </Grid>
         <Frame x:Name="mainFrame" Margin="120,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal"/>
         <!--Frame de navigation-->

@@ -126,7 +126,7 @@
         <Button Margin="901,22,157,0" Name="btnSearchSong" Click="btnSearchSong_Click" Background="Gray" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
             <Image Source="../resources/fleche_droite.png" Height="19" Width="15"/>
         </Button>
-        <TextBox x:Name="TextBlockDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
+        <TextBox x:Name="txtDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
             Height="19" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="btnStinationFolder" Margin="402,22,616,0" Click="NavigateFolder" Content="Parcourir" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="19"></Button>
         <TextBlock Margin="10,6,928,0" Foreground="White" VerticalAlignment="Top" Text="Dossier de destination :"/>

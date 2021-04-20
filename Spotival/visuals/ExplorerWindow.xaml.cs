@@ -46,7 +46,7 @@ namespace Spotival.visuals
             var result = openFileDlg.ShowDialog();
             if (result.ToString() != string.Empty)
             {
-                TextBlockDestination.Text = openFileDlg.SelectedPath;
+                txtDestination.Text = openFileDlg.SelectedPath;
             }
         }
 
@@ -62,7 +62,7 @@ namespace Spotival.visuals
                 if (fichier.EndsWith("mp3"))
                 {
                     var fi = TagLib.File.Create(fichier);
-                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = fichier });
+                    list.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = fichier, Cover = fi.Tag.Pictures });
                 }
             }
             //this.ListViewMusic.Items.Clear();
@@ -81,14 +81,15 @@ namespace Spotival.visuals
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).CommandParameter.ToString());
+            Song musicInfo = (Song)(sender as Button).DataContext;
+            File.Copy(musicInfo.LocalisationFichier, txtDestination.Text+ "\\" + musicInfo.Titre + ".mp3", true);
         }
 
         private void bntAddList_Click(object sender, RoutedEventArgs e)
         {
-            if(TextBlockDestination.Text != "" && txtSearch.Text != "")
+            if(txtDestination.Text != "" && txtSearch.Text != "")
             {
-                string path = TextBlockDestination.Text + "/_a_prevoir.txt";
+                string path = txtDestination.Text + "/_a_prevoir.txt";
                 if (!File.Exists(path))
                 {
                     File.Create(path).Close();
