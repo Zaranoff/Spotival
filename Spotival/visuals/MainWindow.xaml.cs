@@ -1,4 +1,5 @@
-﻿using Spotival.visuals;
+﻿using Spotival.classes;
+using Spotival.visuals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,6 +108,11 @@ namespace Spotival
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
+        }
+
+        private void btnPlayPause_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

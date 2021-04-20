@@ -146,10 +146,11 @@
 
             <Border BorderBrush="Gray" BorderThickness="1" Margin="66,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
 
-            <Label x:Name="Time" Content="00:00:00" Margin="141,37,628,38" Grid.Column="2" Foreground="White"/>
+            <Label x:Name="lblTime" Content="00:00:00" Margin="141,37,628,38" Grid.Column="2" Foreground="White"/>
             <Slider x:Name="progressSong" Style="{StaticResource Horizontal_Slider}" VerticalAlignment="Center" Margin="200,40,83,39" Grid.Column="2" Maximum="100"/>
+            <MediaElement x:Name="mediaPlayer" UnloadedBehavior="Manual" LoadedBehavior="Manual"></MediaElement>
             
-            <Button Margin="92,30,690,29" Grid.Column="2" Background="Transparent" BorderThickness="0">
+            <Button x:Name="btnPlayPause" Click="btnPlayPause_Click" Margin="92,30,690,29" Grid.Column="2" Background="Transparent" BorderThickness="0">
                 <Image Source="../resources/play_icon.png" Width="38"/>
             </Button>
             <Label x:Name="TotalTime" Content="00:00:00" Margin="745,36,24,40" Grid.Column="2" Foreground="White"/>
