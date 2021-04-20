@@ -150,7 +150,7 @@ namespace Spotival.visuals
         private void btnLaunchMusic_Click(object sender, RoutedEventArgs e)
         {
             Song musicInfo = (Song)(sender as Button).DataContext;
-            musicInfo.LaunchMusic();
+            musicInfo.LoadInfoMusic();
         }
     }
 }

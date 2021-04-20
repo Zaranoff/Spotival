@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Spotival.classes
@@ -19,7 +20,7 @@ namespace Spotival.classes
         public string LocalisationFichier { get; set; }
         public TagLib.IPicture[] Cover {get; set;}
 
-        public void LaunchMusic()
+        public void LoadInfoMusic()
         {
             var main = App.Current.MainWindow;
             ((TextBlock)main.FindName("txtTitle")).Text = Titre;
@@ -53,6 +54,11 @@ namespace Spotival.classes
             }
             ((Label)main.FindName("TotalTime")).Content = Durée;
             ((Slider)main.FindName("progressSong")).Value = 0;
+        }
+
+        public void PlaySong()
+        {
+
         }
     }
 }
