@@ -14,5 +14,10 @@ namespace Spotival.classes
         public TimeSpan Durée { get; set; }
         public uint BPM { get; set; }
         public string LocalisationFichier { get; set; }
+
+        public void LaunchMusic()
+        {
+            
+        }
     }
 }

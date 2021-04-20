@@ -8,6 +8,7 @@
         WindowStyle="None"
         ShowInTaskbar="True"
         ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
         Title="MainWindow" Height="800" Width="1200" MinHeight="800" MinWidth="1200">
     <Grid Margin="0,0,0,0" Background="#303030">
         <!--Menu de gauche-->
@@ -80,7 +81,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="RepeatButton">
-                                <Border SnapsToDevicePixels="True" Background="Green"  BorderThickness="1" BorderBrush="YellowGreen" Height="3"/>
+                                <Border SnapsToDevicePixels="True" Background="Green"  BorderThickness="1" BorderBrush="Green" Height="3"/>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -95,29 +96,63 @@
                                 <Ellipse x:Name="Ellipse" Height="10" Width="10" Fill="Green"></Ellipse>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter TargetName="Ellipse" Property="Fill" Value="Yellow"></Setter>
+                                        <Setter TargetName="Ellipse" Property="Fill" Value="Gray"></Setter>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
+
+                <ControlTemplate x:Key="Slider"  TargetType="Slider">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Track Grid.Row="1" x:Name="PART_Track"   >
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource SliderRepeatButton1}"  Command="Slider.DecreaseLarge" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource SliderThumb}"  />
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" />
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+
+                <Style x:Key="Horizontal_Slider" TargetType="Slider">
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="SnapsToDevicePixels" Value="true" />
+                    <Setter Property="OverridesDefaultStyle" Value="true" />
+                    <Style.Triggers>
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter Property="MinHeight" Value="21" />
+                            <Setter Property="MinWidth" Value="104" />
+                            <Setter Property="Template" Value="{StaticResource Slider}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
             </Grid.Resources>
 
             <Border BorderBrush="gray" BorderThickness="1" Margin="0,0,757,99" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"/>
             <Image Source="../resources/album.jpg" Margin="10,11,106,9"/>
-            <TextBlock FontSize="15" Grid.Row="0" Margin="94,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
-            <TextBlock Margin="94,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
+            <TextBlock x:Name="txtTitle" FontSize="15" Grid.Row="0" Margin="94,30,762,49" Grid.ColumnSpan="3" Foreground="White">test</TextBlock>
+            <TextBlock x:Name="txtArtist" Margin="94,56,762,21" Foreground="gray" Grid.ColumnSpan="3">test</TextBlock>
 
             <Border BorderBrush="Gray" BorderThickness="1" Margin="66,0,0,99" Grid.RowSpan="2" Grid.Column="2"/>
 
-            <Label Content="00:00" Margin="154,36,623,41" Grid.Column="2" Foreground="White"/>
-            <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" Grid.Column="2" Margin="200,1,86,99" Grid.RowSpan="2" />
+            <Label Content="00:00" Margin="154,37,628,38" Grid.Column="2" Foreground="White"/>
+            <Slider Style="{StaticResource Horizontal_Slider}" VerticalAlignment="Center" Margin="200,40,83,39" Grid.Column="2" Maximum="100"/>
 
             <Button Margin="92,30,690,29" Grid.Column="2" Background="Transparent" BorderThickness="0">
                 <Image Source="../resources/play_icon.png" Width="38"/>
             </Button>
-            <Label Content="00:00" Margin="745,36,32,41" Grid.Column="2" Foreground="White"/>
+            <Label Content="00:00" Margin="745,36,32,40" Grid.Column="2" Foreground="White"/>
         </Grid>
         <Frame x:Name="mainFrame" Margin="120,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal"/>
         <!--Frame de navigation-->

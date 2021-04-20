@@ -103,7 +103,7 @@
                     <GridViewColumn Width="35">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button BorderThickness="0" Background="Transparent">
+                                <Button BorderThickness="0" Background="Transparent" x:Name="btnLaunchMusic" Click="btnLaunchMusic_Click">
                                     <Image Width="20" Source="../resources/player_song.png"/>
                                 </Button>
                             </DataTemplate>
@@ -113,7 +113,7 @@
                     <GridViewColumn Header="Artiste" DisplayMemberBinding="{Binding Artiste}" Width="180"/>
                     <GridViewColumn Header="Durée" DisplayMemberBinding="{Binding Durée}" Width="56"/>
                     <GridViewColumn Header="BPM" DisplayMemberBinding="{Binding BPM}" Width="40"/>
-                    <GridViewColumn Header="Localisation" DisplayMemberBinding="{Binding LocalisationFichier}" Width="200"/>
+                    <GridViewColumn Header="Localisation" DisplayMemberBinding="{Binding LocalisationFichier}"/>
                 </GridView>
             </ListView.View>
         </ListView>
