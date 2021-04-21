@@ -123,5 +123,10 @@ namespace Spotival
                 mediaPlayer.Play();
             }
         }
+
+        private void progressSong_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mediaPlayer.Position = TimeSpan.FromSeconds(progressSong.Value);
+        }
     }
 }

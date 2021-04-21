@@ -216,9 +216,6 @@
     <Resource Include="resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\plus.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resources\player_song.png" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +252,9 @@
   <ItemGroup>
     <Resource Include="resources\play_icon_final.png" />
     <Resource Include="resources\pause_icon_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

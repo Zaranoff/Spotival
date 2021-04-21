@@ -95,7 +95,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="btnAdd" BorderThickness="0" Background="Transparent" Click="btnAdd_Click">
-                                    <Image Width="20" Source="../resources/plus.png"/>
+                                    <Image Width="15" Source="../resources/plus.png"/>
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -104,7 +104,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button BorderThickness="0" Background="Transparent" x:Name="btnLaunchMusic" Click="btnLaunchMusic_Click">
-                                    <Image Width="20" Source="../resources/player_song.png"/>
+                                    <Image Width="20" Source="../resources/play_icon_final.png"/>
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

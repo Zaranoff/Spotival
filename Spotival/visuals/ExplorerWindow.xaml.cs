@@ -73,7 +73,8 @@ namespace Spotival.visuals
         private void TreeViewNavigate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             FileSystemObjectInfo item = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
-            if(!(item.FileSystemInfo.FullName is null)){
+            if ((item != null))
+            {
                 string path = item.FileSystemInfo.FullName;
                 LoadMusic(path);
             }
@@ -81,8 +82,15 @@ namespace Spotival.visuals
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Song musicInfo = (Song)(sender as Button).DataContext;
-            File.Copy(musicInfo.LocalisationFichier, txtDestination.Text+ "\\" + musicInfo.Titre + ".mp3", true);
+            if (txtDestination.Text != "")
+            {
+                Song musicInfo = (Song)(sender as Button).DataContext;
+                File.Copy(musicInfo.LocalisationFichier, txtDestination.Text + "\\" + musicInfo.Titre + ".mp3", true);
+            }
+            else 
+            {
+                MessageBox.Show("Pas de dossier de destination");
+            }
         }
 
         private void bntAddList_Click(object sender, RoutedEventArgs e)
