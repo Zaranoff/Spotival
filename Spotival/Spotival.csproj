@@ -169,11 +169,8 @@
     <Resource Include="resources\deezer_black.png" />
     <Resource Include="resources\deezer_name_white.png" />
     <Resource Include="resources\deezer_white.png" />
-    <Resource Include="resources\explorer_white.png" />
-    <Resource Include="resources\home.png" />
     <Resource Include="resources\settings.png" />
     <Resource Include="resources\spotify_black.png" />
-    <Resource Include="resources\spotify_green.png" />
     <Resource Include="resources\spotify_name_white.png" />
     <Resource Include="resources\spotify_white.png" />
   </ItemGroup>
@@ -193,9 +190,6 @@
     <Resource Include="resources\close.png" />
     <Resource Include="resources\maximize.png" />
     <Resource Include="resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\deezer_color.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\vinyle.png" />
@@ -255,6 +249,25 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\menu_ligne.png" />
+    <Resource Include="resources\menu_rond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\spotify_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\deezer_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\settings_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
