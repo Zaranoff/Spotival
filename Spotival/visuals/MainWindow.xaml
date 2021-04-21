@@ -161,8 +161,8 @@
                 </Border.Effect>
                 <Image x:Name="CoverSong" Source="../resources/album.jpg" Margin="16,0,-16,0" />
             </Border>
-            <TextBlock x:Name="txtTitle" FontSize="15" Grid.Row="0" Margin="121,30,772,49" Grid.ColumnSpan="2" Foreground="White"/>
-            <TextBlock x:Name="txtArtist" Margin="121,56,772,21" Foreground="gray" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="txtTitle" FontSize="15" Grid.Row="0" Margin="121,30,780,49" Grid.ColumnSpan="2" Foreground="White"/>
+            <TextBlock x:Name="txtArtist" Margin="121,56,780,21" Foreground="gray" Grid.ColumnSpan="2"/>
 
             <Border BorderBrush="Gray" BorderThickness="0,1,0,0" Grid.Column="1" Margin="164,0,0,99" Grid.RowSpan="2"/>
 
@@ -173,7 +173,7 @@
             <Button x:Name="btnPlayPause" Click="btnPlayPause_Click" Margin="190,31,709,30" Grid.Column="1" Padding="-5"  Background="Transparent" BorderThickness="0" Content="{DynamicResource Stop}"/>
             <Label x:Name="TotalTime" Content="00:00:00" Margin="861,37,23,38" Grid.Column="1" Foreground="White"/>
         </Grid>
-        <Frame x:Name="mainFrame" Margin="65,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal" BorderThickness="1,1,1,0" BorderBrush="Gray"/>
+        <Frame x:Name="mainFrame" Margin="65,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal" BorderThickness="0,0,0,0" BorderBrush="Gray"/>
         <!--Frame de navigation-->
         <Grid HorizontalAlignment="Left" Height="33" Margin="1090,10,0,0" VerticalAlignment="Top" Width="100">
             <!--close, mini, maxi-->
@@ -203,7 +203,7 @@
 
         <!--Menu de gauche-->
         <Grid x:Name="nav_pnl" HorizontalAlignment="Left" Width="65" Background="#2E333A">
-            <Border BorderThickness="0,0,0,0" BorderBrush="White">
+            <Border BorderThickness="0,0,1,0" BorderBrush="White">
                 <StackPanel x:Name="st_pnl">
                     <Grid Height="90">
                         <TextBlock Grid.Row="1" Grid.Column="0" Margin="73,-20,0,0" Text="M E N U" Foreground="White" FontSize="22" Background="Transparent" 

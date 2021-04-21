@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -198,9 +199,6 @@
     <Resource Include="resources\vinyl_greyscale.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\Under_construction.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resources\album.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +272,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\logo_Spotival_test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\work_in_progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\parcourir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

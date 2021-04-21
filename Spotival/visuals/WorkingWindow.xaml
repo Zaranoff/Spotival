@@ -6,17 +6,8 @@
       xmlns:local="clr-namespace:Spotival.visuals"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1075"
-      Title="WorkingWindow" Height="700" Width="1075">
+      Title="WorkingWindow" Height="700" Width="1135">
     <Grid>
-        <Image Source="../resources/under_construction.png" Margin="355,258,-12,-74" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-15.446"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+        <Image Source="../resources/work_in_progress.png" Margin="0,100" RenderTransformOrigin="0.5,0.5"/>
     </Grid>
 </Page>
