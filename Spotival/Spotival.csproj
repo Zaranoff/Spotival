@@ -228,12 +228,6 @@
     <Resource Include="resources\fleche_droite.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\pause_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\play_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resources\album_2.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +251,10 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\play_icon_final.png" />
+    <Resource Include="resources\pause_icon_final.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

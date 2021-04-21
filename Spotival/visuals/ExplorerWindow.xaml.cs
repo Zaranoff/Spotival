@@ -121,10 +121,17 @@ namespace Spotival.visuals
 
             foreach (string rowFile in listFilesCurrDir)
             {
-                if (rowFile.ToUpper().Contains(txtSearch.Text.ToUpper()))
+                if (rowFile.ToUpper().Contains(txtSearch.Text.ToUpper()) && rowFile.EndsWith("mp3"))
                 {
-                    var fi = TagLib.File.Create(rowFile);
-                    allFiles.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = rowFile });
+                    try
+                    {
+                        var fi = TagLib.File.Create(rowFile);
+                        allFiles.Items.Add(new Song() { Titre = fi.Tag.Title, Artiste = String.Join(",", fi.Tag.Artists), Durée = fi.Properties.Duration, BPM = fi.Tag.BeatsPerMinute, LocalisationFichier = rowFile, Cover = fi.Tag.Pictures });
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
 

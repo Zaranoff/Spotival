@@ -112,7 +112,16 @@ namespace Spotival
 
         private void btnPlayPause_Click(object sender, RoutedEventArgs e)
         {
-
+            if (((Button)sender).Content == FindResource("Play"))
+            {
+                ((Button)sender).Content = FindResource("Stop");
+                mediaPlayer.Pause();
+            }
+            else
+            {
+                ((Button)sender).Content = FindResource("Play");
+                mediaPlayer.Play();
+            }
         }
     }
 }

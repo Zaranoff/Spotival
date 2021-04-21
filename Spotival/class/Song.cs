@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -66,10 +67,13 @@ namespace Spotival.classes
             StopSong();
             var main = App.Current.MainWindow;
             MediaElement mediaPlayer = (MediaElement)(main.FindName("mediaPlayer"));
+            Button btnPlay = (Button)(main.FindName("btnPlayPause"));
 
             mediaPlayer.Source = (new Uri(LocalisationFichier, UriKind.Relative));
             mediaPlayer.Play();
             mediaPlayer.Position = TimeSpan.FromSeconds(((Slider)(main.FindName("progressSong"))).Value);
+
+            btnPlay.Content = main.FindResource("Play");
 
             ((Slider)(main.FindName("progressSong"))).Maximum = Durée.TotalSeconds;
 
@@ -92,7 +96,6 @@ namespace Spotival.classes
             MediaElement mediaPlayer = (MediaElement)(main.FindName("mediaPlayer"));
             mediaPlayer.Close();
             timer.Stop();
-
         }
     }
 }
