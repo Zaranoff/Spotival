@@ -269,5 +269,11 @@
   <ItemGroup>
     <Resource Include="resources\home.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\logo_Spotival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\logo_Spotival_test.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

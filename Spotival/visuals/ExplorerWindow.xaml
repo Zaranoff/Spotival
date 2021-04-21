@@ -6,34 +6,34 @@
       xmlns:local="clr-namespace:Spotival.visuals"
       xmlns:classes="clr-namespace:Spotival.classes"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1075"
+      d:DesignHeight="800" d:DesignWidth="1135"
       Title="ExplorerWindow">
     <Page.Resources>
         <Style TargetType="ListViewItem">
             <Setter Property="Background" >
                 <Setter.Value>
-                    <SolidColorBrush Color="#303030" Opacity="0.70"/>
+                    <SolidColorBrush Color="#262a30" Opacity="0.70"/>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="BorderThickness" Value="0, 0, 0, 1" />
+            <!--<Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1" />-->
             <Setter Property="Padding" Value="5" />
             <Setter Property="Opacity" Value="40" />
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="true" >
                     <Setter Property="Foreground" Value="White" />
                     <Setter Property="Background" Value="Gray" />
-                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <!--<Setter Property="BorderBrush" Value="Gray"/>-->
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="White" />
                     <Setter Property="Background" Value="Gray" />
-                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <!--<Setter Property="BorderBrush" Value="Gray"/>-->
                 </Trigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="GridViewColumnHeader">
-            <Setter Property="Background" Value="#303030"/>
+            <Setter Property="Background" Value="#262a30"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">
@@ -71,7 +71,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <TreeView Name="TreeViewNavigate" MouseDoubleClick="TreeViewNavigate_MouseDoubleClick" Margin="0,46,800,0" Background="#303030" FontSize="15" RenderTransformOrigin="-0.917,-2.333">
+        <TreeView Name="TreeViewNavigate" MouseDoubleClick="TreeViewNavigate_MouseDoubleClick" Margin="0,46,807,0" Background="#262a30" FontSize="15" RenderTransformOrigin="-0.917,-2.333">
             <TreeView.ItemContainerStyle>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
@@ -88,7 +88,7 @@
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
         </TreeView>
-        <ListView x:Name="ListViewMusic" Margin="280,46,0,0" Background="#303030" Foreground="White">
+        <ListView x:Name="ListViewMusic" Margin="328,46,2,0" Background="#262a30" Foreground="White">
             <ListView.View>
                 <GridView x:Name="GridViewMusic">
                     <GridViewColumn Width="35" >
@@ -117,18 +117,18 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Margin="487,22,570,0" Name="bntAddList" Click="bntAddList_Click" Background="#303030" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
+        <Button Margin="537,22,578,0" Name="bntAddList" Click="bntAddList_Click" Background="#2E333A" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
             <Image Source="../resources/plus_icon.png" Height="15" Width="15"/>
         </Button>
-        <TextBlock Margin="515,6,488,0" Foreground="White" VerticalAlignment="Top">Rechercher :</TextBlock>
-        <TextBox x:Name="txtSearch" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
-                 Height="19" Margin="515,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" RenderTransformOrigin="0.5,0.5"/>
-        <Button Margin="901,22,157,0" Name="btnSearchSong" Click="btnSearchSong_Click" Background="Gray" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
+        <TextBlock Margin="557,6,446,0" Foreground="White" VerticalAlignment="Top">Rechercher :</TextBlock>
+        <TextBox x:Name="txtSearch" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#2E333A" Foreground="White" HorizontalAlignment="Left" 
+                 Height="19" Margin="557,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" RenderTransformOrigin="0.5,0.5"/>
+        <Button Margin="943,22,175,0" Name="btnSearchSong" Click="btnSearchSong_Click" Background="Gray" BorderThickness="0" VerticalAlignment="Top" VerticalContentAlignment="Center" RenderTransformOrigin="12.783,-11.5" Height="19">
             <Image Source="../resources/fleche_droite.png" Height="19" Width="15"/>
         </Button>
-        <TextBox x:Name="txtDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#303030" Foreground="White" HorizontalAlignment="Left" 
+        <TextBox x:Name="txtDestination" BorderBrush="Gray" FontSize="11" VerticalContentAlignment="Center" Background="#2E333A" Foreground="White" HorizontalAlignment="Left" 
             Height="19" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="btnStinationFolder" Margin="402,22,616,0" Click="NavigateFolder" Content="Parcourir" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="19"></Button>
+        <Button x:Name="btnStinationFolder" Margin="402,22,674,0" Click="NavigateFolder" Content="Parcourir" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="19"></Button>
         <TextBlock Margin="10,6,928,0" Foreground="White" VerticalAlignment="Top" Text="Dossier de destination :"/>
     </Grid>
 </Page>
