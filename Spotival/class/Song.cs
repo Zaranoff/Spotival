@@ -77,7 +77,7 @@ namespace Spotival.classes
 
             ((Slider)(main.FindName("progressSong"))).Maximum = Durée.TotalSeconds;
 
-            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }

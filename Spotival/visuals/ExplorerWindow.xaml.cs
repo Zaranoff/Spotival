@@ -116,11 +116,13 @@ namespace Spotival.visuals
 
         private void btnSearchSong_Click(object sender, RoutedEventArgs e)
         {
-
-            FileSystemObjectInfo path = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
-            ListView allFiles = new ListView();
-            allFiles = listAllFiles(allFiles, path.FileSystemInfo.FullName, "mp3", true);
-            ListViewMusic.ItemsSource = allFiles.Items;
+            if(!(TreeViewNavigate.SelectedItem is null))
+            {
+                FileSystemObjectInfo path = (FileSystemObjectInfo)TreeViewNavigate.SelectedItem;
+                ListView allFiles = new ListView();
+                allFiles = listAllFiles(allFiles, path.FileSystemInfo.FullName, "mp3", true);
+                ListViewMusic.ItemsSource = allFiles.Items;
+            }
         }
 
         public ListView listAllFiles(ListView allFiles, string path, string ext, bool scanDirOk)
