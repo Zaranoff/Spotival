@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.IO;
 using Spotival.classes;
 using Spotival.visuals;
+using System.Windows.Media;
 
 namespace Spotival.visuals
 {
