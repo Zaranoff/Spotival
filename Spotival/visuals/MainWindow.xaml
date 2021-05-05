@@ -63,6 +63,17 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,-6,-6" Width="46" Height="45"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid Margin="0,0,0,0" Background="#2E333A">
         <Grid x:Name="GridLecture" Margin="65,699,0,0" Height="101" VerticalAlignment="Top">
@@ -170,7 +181,7 @@
             <Slider x:Name="progressSong" ValueChanged="progressSong_ValueChanged" IsMoveToPointEnabled="True" Style="{StaticResource Horizontal_Slider}" VerticalAlignment="Center" Margin="311,40,83,39" Grid.Column="1" Maximum="100" Height="21"/>
             <MediaElement x:Name="mediaPlayer" UnloadedBehavior="Manual" LoadedBehavior="Manual" Grid.ColumnSpan="2" Margin="161,-149,722,149"/>
 
-            <Button x:Name="btnPlayPause" Click="btnPlayPause_Click" Margin="190,31,709,30" Grid.Column="1" Padding="-5"  Background="Transparent" BorderThickness="0" Content="{DynamicResource Stop}"/>
+            <Button x:Name="btnPlayPause" Click="btnPlayPause_Click" Margin="190,26,709,34" Grid.Column="1" Background="Transparent" BorderThickness="0" Content="{DynamicResource Play}"/>
             <Label x:Name="TotalTime" Content="00:00:00" Margin="861,37,23,38" Grid.Column="1" Foreground="White"/>
         </Grid>
         <Frame x:Name="mainFrame" Margin="65,0,0,101" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal" BorderThickness="0,0,0,0" BorderBrush="Gray"/>
